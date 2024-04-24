@@ -1,0 +1,994 @@
+{
+  "source": 2,
+  "revision": 13,
+  "description": null,
+  "createdBy": {
+    "displayName": "amatuz Zahra",
+    "url": "https://spsproduks1.vssps.visualstudio.com/Aaa4d90ea-489f-4dbe-99cc-c6baade75897/_apis/Identities/1405bada-ff56-60ec-b6b1-7933da0c7a98",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+      }
+    },
+    "id": "1405bada-ff56-60ec-b6b1-7933da0c7a98",
+    "uniqueName": "amatuzzahranaqvi14@gmail.com",
+    "imageUrl": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4",
+    "descriptor": "msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+  },
+  "createdOn": "2024-04-24T11:58:31.513Z",
+  "modifiedBy": {
+    "displayName": "amatuz Zahra",
+    "url": "https://spsproduks1.vssps.visualstudio.com/Aaa4d90ea-489f-4dbe-99cc-c6baade75897/_apis/Identities/1405bada-ff56-60ec-b6b1-7933da0c7a98",
+    "_links": {
+      "avatar": {
+        "href": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+      }
+    },
+    "id": "1405bada-ff56-60ec-b6b1-7933da0c7a98",
+    "uniqueName": "amatuzzahranaqvi14@gmail.com",
+    "imageUrl": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4",
+    "descriptor": "msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+  },
+  "modifiedOn": "2024-04-24T18:58:48.367Z",
+  "isDeleted": false,
+  "isDisabled": false,
+  "variables": {
+    "cdnProfileName": {
+      "value": "prodstaticwebappcdnp"
+    },
+    "storageAccountName": {
+      "value": "prodstaticwebappbkt"
+    }
+  },
+  "variableGroups": [],
+  "environments": [
+    {
+      "id": 1,
+      "name": "dev",
+      "rank": 1,
+      "owner": {
+        "displayName": "amatuz Zahra",
+        "url": "https://spsproduks1.vssps.visualstudio.com/Aaa4d90ea-489f-4dbe-99cc-c6baade75897/_apis/Identities/1405bada-ff56-60ec-b6b1-7933da0c7a98",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+          }
+        },
+        "id": "1405bada-ff56-60ec-b6b1-7933da0c7a98",
+        "uniqueName": "amatuzzahranaqvi14@gmail.com",
+        "imageUrl": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4",
+        "descriptor": "msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 1
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 1
+        }
+      },
+      "deployStep": {
+        "id": 2
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 3
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 2
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": 0
+            },
+            "agentSpecification": {
+              "identifier": "ubuntu latest"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+                {
+                  "alias": "_static_webapp-CI",
+                  "artifactType": "Build",
+                  "artifactDownloadMode": "All",
+                  "artifactItems": []
+                }
+              ]
+            },
+            "queueId": 9,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent job",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "5e1e3830-fbfb-11e5-aab1-090c92bc4988",
+              "version": "1.*",
+              "name": "Extract files - Unzip artifacts",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "archiveFilePatterns": "**/*.zip",
+                "destinationFolder": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "cleanDestinationFolder": "true",
+                "overwriteExistingFiles": "true",
+                "pathToSevenZipTool": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "2.*",
+              "name": "Azure CLI - Azure Blob Clean",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "scriptType": "ps",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "az storage blob delete-batch --account-name $(storageAccountName) --source $web",
+                "scriptArguments": "",
+                "powerShellErrorActionPreference": "stop",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false",
+                "powerShellIgnoreLASTEXITCODE": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "eb72cb01-a7e5-427b-a8a1-1b31ccac8a43",
+              "version": "6.*",
+              "name": "AzureBlob File Copy",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "SourcePath": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "ConnectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "Destination": "AzureBlob",
+                "StorageAccountRM": "$(storageAccountName)",
+                "ContainerName": "$web",
+                "BlobPrefix": "",
+                "EnvironmentNameRM": "",
+                "ResourceFilteringMethod": "machineNames",
+                "MachineNames": "",
+                "vmsAdminUserName": "",
+                "vmsAdminPassword": "",
+                "TargetPath": "",
+                "AdditionalArgumentsForBlobCopy": "",
+                "AdditionalArgumentsForVMCopy": "",
+                "enableCopyPrerequisites": "false",
+                "CopyFilesInParallel": "true",
+                "CleanTargetBeforeCopy": "false",
+                "skipCACheck": "true"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "2.*",
+              "name": "Azure CDN Cache Purge ",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "scriptType": "ps",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "az cdn endpoint purge -g dev -n $(storageAccountName) --profile-name $(cdnProfileName) --content-paths '/*' '/'\n",
+                "scriptArguments": "",
+                "powerShellErrorActionPreference": "stop",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false",
+                "powerShellIgnoreLASTEXITCODE": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": 1,
+          "value": "",
+          "result": null
+        },
+        {
+          "name": "_static_webapp-CI",
+          "conditionType": 4,
+          "value": "{\"sourceBranch\":\"develop\",\"tags\":[],\"useBuildDefinitionBranch\":false,\"createReleaseOnBuildTagging\":false}",
+          "result": null
+        },
+        {
+          "name": "_static_webapp-CI",
+          "conditionType": 4,
+          "value": "{\"sourceBranch\":\"JIRA-*\",\"tags\":[],\"useBuildDefinitionBranch\":false,\"createReleaseOnBuildTagging\":false}",
+          "result": null
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {
+        "id": 0,
+        "url": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/9d9517c2-eb02-4466-9f05-0f5c08490501/_apis/Release/releases/0",
+        "_links": {}
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {
+        "BoardsEnvironmentType": {
+          "$type": "System.String",
+          "$value": "unmapped"
+        },
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "environmentTriggers": [],
+      "badgeUrl": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/_apis/public/Release/badge/9d9517c2-eb02-4466-9f05-0f5c08490501/1/1"
+    },
+    {
+      "id": 2,
+      "name": "uat",
+      "rank": 2,
+      "owner": {
+        "displayName": "amatuz Zahra",
+        "url": "https://spsproduks1.vssps.visualstudio.com/Aaa4d90ea-489f-4dbe-99cc-c6baade75897/_apis/Identities/1405bada-ff56-60ec-b6b1-7933da0c7a98",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+          }
+        },
+        "id": "1405bada-ff56-60ec-b6b1-7933da0c7a98",
+        "uniqueName": "amatuzzahranaqvi14@gmail.com",
+        "imageUrl": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4",
+        "descriptor": "msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 4
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 1
+        }
+      },
+      "deployStep": {
+        "id": 5
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 6
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 2
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": 0
+            },
+            "agentSpecification": null,
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": []
+            },
+            "queueId": 4,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent job",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "5e1e3830-fbfb-11e5-aab1-090c92bc4988",
+              "version": "1.*",
+              "name": "Extract files ",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "archiveFilePatterns": "**/*.zip",
+                "destinationFolder": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "cleanDestinationFolder": "true",
+                "overwriteExistingFiles": "true",
+                "pathToSevenZipTool": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "2.*",
+              "name": "Azure CLI - Azure Blob Clean",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "scriptType": "ps",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "az storage blob delete-batch --account-name $(storageAccountName) --source $web",
+                "scriptArguments": "",
+                "powerShellErrorActionPreference": "stop",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false",
+                "powerShellIgnoreLASTEXITCODE": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "eb72cb01-a7e5-427b-a8a1-1b31ccac8a43",
+              "version": "6.*",
+              "name": "AzureBlob File Copy",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "SourcePath": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "ConnectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "Destination": "AzureBlob",
+                "StorageAccountRM": "$(storageAccountName)",
+                "ContainerName": "$web",
+                "BlobPrefix": "",
+                "EnvironmentNameRM": "uat",
+                "ResourceFilteringMethod": "machineNames",
+                "MachineNames": "",
+                "vmsAdminUserName": "",
+                "vmsAdminPassword": "",
+                "TargetPath": "",
+                "AdditionalArgumentsForBlobCopy": "",
+                "AdditionalArgumentsForVMCopy": "",
+                "enableCopyPrerequisites": "false",
+                "CopyFilesInParallel": "true",
+                "CleanTargetBeforeCopy": "false",
+                "skipCACheck": "true"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "2.*",
+              "name": "Azure CDN Cache Purge",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "scriptType": "ps",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "inlineScript": "az cdn endpoint purge -g dev -n $(storageAccountName) --profile-name $(cdnProfileName) --content-paths '/*' '/'\n",
+                "scriptArguments": "",
+                "powerShellErrorActionPreference": "stop",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false",
+                "powerShellIgnoreLASTEXITCODE": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": 1,
+          "value": "",
+          "result": null
+        },
+        {
+          "name": "_static_webapp-CI",
+          "conditionType": 4,
+          "value": "{\"sourceBranch\":\"uat\",\"tags\":[],\"useBuildDefinitionBranch\":false,\"createReleaseOnBuildTagging\":false}",
+          "result": null
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {
+        "id": 0,
+        "url": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/9d9517c2-eb02-4466-9f05-0f5c08490501/_apis/Release/releases/0",
+        "_links": {}
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {
+        "BoardsEnvironmentType": {
+          "$type": "System.String",
+          "$value": "unmapped"
+        },
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "environmentTriggers": [],
+      "badgeUrl": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/_apis/public/Release/badge/9d9517c2-eb02-4466-9f05-0f5c08490501/1/2"
+    },
+    {
+      "id": 3,
+      "name": "prod",
+      "rank": 3,
+      "owner": {
+        "displayName": "amatuz Zahra",
+        "url": "https://spsproduks1.vssps.visualstudio.com/Aaa4d90ea-489f-4dbe-99cc-c6baade75897/_apis/Identities/1405bada-ff56-60ec-b6b1-7933da0c7a98",
+        "_links": {
+          "avatar": {
+            "href": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+          }
+        },
+        "id": "1405bada-ff56-60ec-b6b1-7933da0c7a98",
+        "uniqueName": "amatuzzahranaqvi14@gmail.com",
+        "imageUrl": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4",
+        "descriptor": "msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+      },
+      "variables": {},
+      "variableGroups": [],
+      "preDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": false,
+            "isNotificationOn": false,
+            "approver": {
+              "displayName": "amatuz Zahra",
+              "url": "https://spsproduks1.vssps.visualstudio.com/Aaa4d90ea-489f-4dbe-99cc-c6baade75897/_apis/Identities/1405bada-ff56-60ec-b6b1-7933da0c7a98",
+              "_links": {
+                "avatar": {
+                  "href": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+                }
+              },
+              "id": "1405bada-ff56-60ec-b6b1-7933da0c7a98",
+              "uniqueName": "amatuzzahranaqvi14@gmail.com",
+              "imageUrl": "https://dev.azure.com/amatuzzahranaqvi14/_apis/GraphProfile/MemberAvatars/msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4",
+              "descriptor": "msa.MTQwNWJhZGEtZmY1Ni03MGVjLWI2YjEtNzkzM2RhMGM3YTk4"
+            },
+            "id": 7
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": true,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 14400,
+          "executionOrder": 1
+        }
+      },
+      "deployStep": {
+        "id": 8
+      },
+      "postDeployApprovals": {
+        "approvals": [
+          {
+            "rank": 1,
+            "isAutomated": true,
+            "isNotificationOn": false,
+            "id": 9
+          }
+        ],
+        "approvalOptions": {
+          "requiredApproverCount": null,
+          "releaseCreatorCanBeApprover": false,
+          "autoTriggeredAndPreviousEnvironmentApprovedCanBeSkipped": false,
+          "enforceIdentityRevalidation": false,
+          "timeoutInMinutes": 0,
+          "executionOrder": 2
+        }
+      },
+      "deployPhases": [
+        {
+          "deploymentInput": {
+            "parallelExecution": {
+              "parallelExecutionType": 0
+            },
+            "agentSpecification": {
+              "identifier": "ubuntu latest"
+            },
+            "skipArtifactsDownload": false,
+            "artifactsDownloadInput": {
+              "downloadInputs": [
+                {
+                  "alias": "_static_webapp-CI",
+                  "artifactType": "Build",
+                  "artifactDownloadMode": "All",
+                  "artifactItems": []
+                }
+              ]
+            },
+            "queueId": 9,
+            "demands": [],
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1,
+            "condition": "succeeded()",
+            "overrideInputs": {}
+          },
+          "rank": 1,
+          "phaseType": 1,
+          "name": "Agent job",
+          "refName": null,
+          "workflowTasks": [
+            {
+              "environment": {},
+              "taskId": "5e1e3830-fbfb-11e5-aab1-090c92bc4988",
+              "version": "1.*",
+              "name": "Extract files - Unzip artifacts",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "archiveFilePatterns": "**/*.zip",
+                "destinationFolder": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "cleanDestinationFolder": "true",
+                "overwriteExistingFiles": "true",
+                "pathToSevenZipTool": ""
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "2.*",
+              "name": "Azure CLI - Azure Blob Clean",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "scriptType": "ps",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "az storage blob delete-batch --account-name $(storageAccountName) --source $web",
+                "scriptArguments": "",
+                "powerShellErrorActionPreference": "stop",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false",
+                "powerShellIgnoreLASTEXITCODE": "false"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "eb72cb01-a7e5-427b-a8a1-1b31ccac8a43",
+              "version": "6.*",
+              "name": "AzureBlob File Copy",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "SourcePath": "$(System.DefaultWorkingDirectory)/_static_webapp-CI",
+                "ConnectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "Destination": "AzureBlob",
+                "StorageAccountRM": "$(storageAccountName)",
+                "ContainerName": "$web",
+                "BlobPrefix": "",
+                "EnvironmentNameRM": "",
+                "ResourceFilteringMethod": "machineNames",
+                "MachineNames": "",
+                "vmsAdminUserName": "",
+                "vmsAdminPassword": "",
+                "TargetPath": "",
+                "AdditionalArgumentsForBlobCopy": "",
+                "AdditionalArgumentsForVMCopy": "",
+                "enableCopyPrerequisites": "false",
+                "CopyFilesInParallel": "true",
+                "CleanTargetBeforeCopy": "false",
+                "skipCACheck": "true"
+              }
+            },
+            {
+              "environment": {},
+              "taskId": "46e4be58-730b-4389-8a2f-ea10b3e5e815",
+              "version": "2.*",
+              "name": "Azure CDN Cache Purge ",
+              "refName": "",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "retryCountOnTaskFailure": 0,
+              "definitionType": "task",
+              "overrideInputs": {},
+              "condition": "succeeded()",
+              "inputs": {
+                "connectedServiceNameARM": "2ea5b5be-9762-458c-8cd3-2c6054cce52c",
+                "scriptType": "ps",
+                "scriptLocation": "inlineScript",
+                "scriptPath": "",
+                "inlineScript": "az cdn endpoint purge -g dev -n $(storageAccountName) --profile-name $(cdnProfileName) --content-paths '/*' '/'\n",
+                "scriptArguments": "",
+                "powerShellErrorActionPreference": "stop",
+                "addSpnToEnvironment": "false",
+                "useGlobalConfig": "false",
+                "cwd": "",
+                "failOnStandardError": "false",
+                "powerShellIgnoreLASTEXITCODE": "false"
+              }
+            }
+          ]
+        }
+      ],
+      "environmentOptions": {
+        "emailNotificationType": "OnlyOnFailure",
+        "emailRecipients": "release.environment.owner;release.creator",
+        "skipArtifactsDownload": false,
+        "timeoutInMinutes": 0,
+        "enableAccessToken": false,
+        "publishDeploymentStatus": true,
+        "badgeEnabled": false,
+        "autoLinkWorkItems": false,
+        "pullRequestDeploymentEnabled": false
+      },
+      "demands": [],
+      "conditions": [
+        {
+          "name": "ReleaseStarted",
+          "conditionType": 1,
+          "value": "",
+          "result": null
+        },
+        {
+          "name": "_static_webapp-CI",
+          "conditionType": 4,
+          "value": "{\"sourceBranch\":\"prod\",\"tags\":[],\"useBuildDefinitionBranch\":false,\"createReleaseOnBuildTagging\":false}",
+          "result": null
+        }
+      ],
+      "executionPolicy": {
+        "concurrencyCount": 1,
+        "queueDepthCount": 0
+      },
+      "schedules": [],
+      "currentRelease": {
+        "id": 0,
+        "url": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/9d9517c2-eb02-4466-9f05-0f5c08490501/_apis/Release/releases/0",
+        "_links": {}
+      },
+      "retentionPolicy": {
+        "daysToKeep": 30,
+        "releasesToKeep": 3,
+        "retainBuild": true
+      },
+      "processParameters": {},
+      "properties": {
+        "BoardsEnvironmentType": {
+          "$type": "System.String",
+          "$value": "unmapped"
+        },
+        "LinkBoardsWorkItems": {
+          "$type": "System.String",
+          "$value": "False"
+        }
+      },
+      "preDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "postDeploymentGates": {
+        "id": 0,
+        "gatesOptions": null,
+        "gates": []
+      },
+      "environmentTriggers": [],
+      "badgeUrl": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/_apis/public/Release/badge/9d9517c2-eb02-4466-9f05-0f5c08490501/1/3"
+    }
+  ],
+  "artifacts": [
+    {
+      "sourceId": "9d9517c2-eb02-4466-9f05-0f5c08490501:1",
+      "type": "Build",
+      "alias": "_static_webapp-CI",
+      "definitionReference": {
+        "artifactSourceDefinitionUrl": {
+          "id": "https://dev.azure.com/amatuzzahranaqvi14/_permalink/_build/index?collectionId=8445a5b8-55bb-42c6-aa6c-e282d932f6ce&projectId=9d9517c2-eb02-4466-9f05-0f5c08490501&definitionId=1",
+          "name": ""
+        },
+        "defaultVersionBranch": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionSpecific": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionTags": {
+          "id": "",
+          "name": ""
+        },
+        "defaultVersionType": {
+          "id": "latestType",
+          "name": "Latest"
+        },
+        "definition": {
+          "id": "1",
+          "name": "static_webapp-CI"
+        },
+        "definitions": {
+          "id": "",
+          "name": ""
+        },
+        "IsMultiDefinitionType": {
+          "id": "False",
+          "name": "False"
+        },
+        "project": {
+          "id": "9d9517c2-eb02-4466-9f05-0f5c08490501",
+          "name": "static_webapp"
+        },
+        "repository": {
+          "id": "",
+          "name": ""
+        }
+      },
+      "isPrimary": true,
+      "isRetained": false
+    }
+  ],
+  "triggers": [
+    {
+      "artifactAlias": "_static_webapp-CI",
+      "triggerConditions": [
+        {
+          "sourceBranch": "develop",
+          "tags": [],
+          "tagFilter": null,
+          "useBuildDefinitionBranch": false,
+          "createReleaseOnBuildTagging": false
+        },
+        {
+          "sourceBranch": "uat",
+          "tags": [],
+          "tagFilter": null,
+          "useBuildDefinitionBranch": false,
+          "createReleaseOnBuildTagging": false
+        },
+        {
+          "sourceBranch": "prod",
+          "tags": [],
+          "tagFilter": null,
+          "useBuildDefinitionBranch": false,
+          "createReleaseOnBuildTagging": false
+        },
+        {
+          "sourceBranch": "JIRA-*",
+          "tags": [],
+          "tagFilter": null,
+          "useBuildDefinitionBranch": false,
+          "createReleaseOnBuildTagging": false
+        }
+      ],
+      "triggerType": 1
+    }
+  ],
+  "releaseNameFormat": "Release-$(rev:r)",
+  "tags": [],
+  "properties": {
+    "DefinitionCreationSource": {
+      "$type": "System.String",
+      "$value": "ReleaseNew"
+    },
+    "IntegrateBoardsWorkItems": {
+      "$type": "System.String",
+      "$value": "False"
+    },
+    "IntegrateJiraWorkItems": {
+      "$type": "System.String",
+      "$value": "false"
+    }
+  },
+  "id": 1,
+  "name": "static_webapp-CD",
+  "path": "\\",
+  "projectReference": null,
+  "url": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/9d9517c2-eb02-4466-9f05-0f5c08490501/_apis/Release/definitions/1",
+  "_links": {
+    "self": {
+      "href": "https://vsrm.dev.azure.com/amatuzzahranaqvi14/9d9517c2-eb02-4466-9f05-0f5c08490501/_apis/Release/definitions/1"
+    },
+    "web": {
+      "href": "https://dev.azure.com/amatuzzahranaqvi14/9d9517c2-eb02-4466-9f05-0f5c08490501/_release?definitionId=1"
+    }
+  }
+}

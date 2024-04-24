@@ -1,0 +1,78 @@
+trigger:
+  branches:
+    include:
+    - develop
+    - uat
+    - prod
+    - JIRA-*
+  paths:
+    exclude:
+    - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  artifactName: 'static-site'
+  artifactPath: '$(Build.BinariesDirectory)'
+
+stages:
+- stage: DEV
+  displayName: 'Development'
+  condition: or(eq(variables['Build.SourceBranchName'], 'refs/heads/dev'), startsWith(variables['Build.SourceBranchName'], 'refs/heads/JIRA-'))
+  jobs:
+  - job: Deploy_DEV
+    displayName: 'Deploy to DEV'
+    steps:
+    - task: ArchiveFiles@2
+      displayName: 'Archive static sites -  $(artifactPath)'
+      inputs:
+        rootFolderOrFile: '$(artifactPath)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(artifactName).zip'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: $(artifactName)'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: '$(artifactName)'
+
+- stage: UAT
+  displayName: 'User Acceptance Testing'
+  condition: eq(variables['Build.SourceBranchName'], 'refs/heads/uat')
+  jobs:
+  - job: Deploy_UAT
+    displayName: 'Deploy to UAT'
+    steps:
+    - task: ArchiveFiles@2
+      displayName: 'Archive static sites -  $(artifactPath)'
+      inputs:
+        rootFolderOrFile: '$(artifactPath)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(artifactName).zip'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: $(artifactName)'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: '$(artifactName)'
+
+- stage: PROD
+  displayName: 'Production'
+  condition: eq(variables['Build.SourceBranchName'], 'refs/heads/prod')
+  jobs:
+  - job: Deploy_PROD
+    displayName: 'Deploy to PROD'
+    steps:
+    - task: ArchiveFiles@2
+      displayName: 'Archive static sites -  $(artifactPath)'
+      inputs:
+        rootFolderOrFile: '$(artifactPath)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(artifactName).zip'
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: $(artifactName)'
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: '$(artifactName)'

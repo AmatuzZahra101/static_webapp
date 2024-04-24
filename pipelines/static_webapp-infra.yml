@@ -1,0 +1,97 @@
+trigger:
+  branches:
+    include:
+    - develop
+    - uat
+    - prod
+    - JIRA-*
+  paths:
+    exclude:
+    - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: storageSku
+    value: "Standard_LRS"
+  - name: indexDocumentPath
+    value: "src/index.html"
+  - name: errorDocument404Path
+    value: "src/error.html"  
+
+stages:
+- stage: DEV
+  displayName: 'Development'
+  condition: or(eq(variables['Build.SourceBranchName'], 'refs/heads/dev'), startsWith(variables['Build.SourceBranchName'], 'refs/heads/JIRA-'))
+  variables:
+    - name: storageAccountName
+      value: "devstaticwebappbkt"
+    - name: cdnProfileName
+      value: "devstaticwebcdnp"
+    - name: cdnEndpointName
+      value: "devstaticwebcdne"
+  jobs:
+  - job: Deploy_DEV
+    displayName: 'Deploy to DEV'
+    steps:
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: 'ARM Template deployment: Resource Group scope'
+      inputs:
+        azureResourceManagerConnection: 'azure_static_web_poc'
+        subscriptionId: '1b5c4502-de66-461e-a052-e91836cfbc16'
+        resourceGroupName: dev
+        location: 'East US'
+        csmFile: 'templates/storage-account-cdn-deployment.json'
+        overrideParameters: '-storageAccountName $(storageAccountName) -storageSku $(storageSku) -indexDocumentPath $(indexDocumentPath) -errorDocument404Path $(errorDocument404Path) -cdnProfileName $(cdnProfileName) -cdnEndpointName $(cdnEndpointName)'
+
+
+- stage: UAT
+  displayName: 'User Acceptance Testing'
+  condition: eq(variables['Build.SourceBranchName'], 'refs/heads/uat')
+  variables:
+    - name: storageAccountName
+      value: "uatstaticwebappbkt"
+    - name: cdnProfileName
+      value: "uatstaticwebcdnp"
+    - name: cdnEndpointName
+      value: "uatstaticwebcdne"      
+  jobs:
+  - job: Deploy_UAT
+    displayName: 'Deploy to UAT'
+    steps:
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: 'ARM Template deployment: Resource Group scope'
+      inputs:
+        azureResourceManagerConnection: 'azure_static_web_poc'
+        subscriptionId: '1b5c4502-de66-461e-a052-e91836cfbc16'
+        resourceGroupName: uat
+        location: 'East US'
+        csmFile: 'templates/storage-account-cdn-deployment.json'
+        overrideParameters: '-storageAccountName $(storageAccountName) -storageSku $(storageSku) -indexDocumentPath $(indexDocumentPath) -errorDocument404Path $(errorDocument404Path) -cdnProfileName $(cdnProfileName) -cdnEndpointName $(cdnEndpointName)'
+
+- stage: PROD
+  displayName: 'Production'
+  condition: eq(variables['Build.SourceBranchName'], 'refs/heads/prod')
+  variables:
+    - name: storageAccountName
+      value: "prodstaticwebappbkt"
+    - name: storageSku
+      value: "Standard_GRS"
+    - name: cdnProfileName
+      value: "prodstaticwebcdnp"
+    - name: cdnEndpointName
+      value: "prodstaticwebcdne"       
+  jobs:
+  - job: Deploy_PROD
+    displayName: 'Deploy to PROD'
+    steps:
+    - task: AzureResourceManagerTemplateDeployment@3
+      displayName: 'ARM Template deployment: Resource Group scope'
+      inputs:
+        azureResourceManagerConnection: 'azure_static_web_poc'
+        subscriptionId: '1b5c4502-de66-461e-a052-e91836cfbc16'
+        resourceGroupName: prod
+        location: 'East US'
+        csmFile: 'templates/storage-account-cdn-deployment.json'
+        overrideParameters: '-storageAccountName $(storageAccountName) -storageSku $(storageSku) -indexDocumentPath $(indexDocumentPath) -errorDocument404Path $(errorDocument404Path) -cdnProfileName $(cdnProfileName) -cdnEndpointName $(cdnEndpointName)'
